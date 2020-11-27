@@ -1,38 +1,47 @@
 {{define "employee/formPage"}}
-
 {{ template "Header" }}
-{{ template "Menu" }} 
+{{ template "Menu" }}
 {{ . }}
-
 <div class="title">
-  {{if .IsEdit }}Update{{else}}Create{{end}} 
+    {{if .IsEdit }}Update{{else}}Create{{end}}
 </div>
- 
 
-<form method="POST">
-  <input type="hidden" name="id" value="{{ .Data.ID }}" />
-  <div class="field">
-    <label class="label">Name</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="Name" name="name" value="{{ .Data.Name }}" required>
+
+  <div class="py-0 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="py-5 mt-5 col-md-7 offset-md-3" style="">
+          <div class="card shadow p-3 bg-white mt-5 mb-5 rounded" style="opacity: 91%; ">
+            <div class="card-body">
+              <h3 class="card-title mt-3"><b>AGREGAR EMPLEADO</b></h3>
+              <form method="POST" class="px-5">
+                        <input type="hidden" name="id" value="{{ .Data.ID }}" />
+                        <div class="field">
+                            <label class="label">Nombre</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Ingrese Nombre" name="name" value="{{ .Data.Name }}" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Ciudad</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Ciudad de origen" name="Ciudad de origen" value="{{ .Data.City }}">
+                            </div>
+                        </div>
+                        <div class="container py-3">
+                            <div class="control">
+                                <input type="submit" value="Guardar" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </form>
+            </div>  
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="field">
-    <label class="label">City</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="City" name="city" value="{{ .Data.City }}">
-    </div>
-  </div>
-  <div class="field is-grouped">
-    <div class="control">
-      <input type="submit" value="Save user" class="button is-primary"/>
-    </div>
-    
-  </div>
 
-
-
-</form><br />    
+<br />
 {{ template "Footer" }}
 {{end}}
