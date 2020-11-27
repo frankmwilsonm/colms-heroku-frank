@@ -64,7 +64,7 @@ func connectDB() (c *gorm.DB, err error) {
 	//dsn := "docker:docker@tcp(localhost:3306)/test_db?charset=utf8mb4&parseTime=True&loc=Local"
 	//conn, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
-	dsn := "user=rdcrofkuaysjfd password=6b7d82e87153eaa84691f4fc26edc8fe38776c193fd8155d19cbcc6c031ac4b3 host=ec2-54-158-190-214.compute-1.amazonaws.com dbname=d83unplc9i729a port=5432 sslmode=require TimeZone=Asia/Shanghai"
+	dsn := "user=ycekpauighimrf password=030d276c1acb1d14f05d6ba9482c04e63bd219653afa30e03abb1ed7f42135ed host=ec2-184-72-236-57.compute-1.amazonaws.com dbname=d3sm904nn36963 port=5432 sslmode=require TimeZone=Asia/Shanghai"
 	//dsn := "user=postgres password=postgres2 dbname=users_test host=localhost port=5435 sslmode=disable TimeZone=Asia/Shanghai"
 	conn, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
